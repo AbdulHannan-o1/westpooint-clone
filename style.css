@@ -110,18 +110,19 @@ header{
     padding-left:15px ;
     padding-bottom: 15px;
 }
-#CategoryDiv{
+#CategoryDiv,
+#List ul li button{
     height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.List{
     font-weight: 600;
     list-style: none;
-    padding-top: 15px;    
+    padding-top: 15px;   
 }
-.List li{
+
+
+#List li    {
     display: inline;
     margin-right: 20px;
     position: relative; 
@@ -130,7 +131,7 @@ header{
     transition: color 0.3s ease; 
 }
 
-.List li::after {
+#List li::after {
     content: ""; 
     position: absolute; 
     left: 0; 
@@ -141,11 +142,11 @@ header{
     transition: background-color 0.3s ease, transform 0.3s; 
     transform: translateX(-100%); 
 }
-.List li:hover {
+#List li:hover {
     color:brown; 
 }
 
-.List li:hover::after {
+#List li:hover::after {
     background-color:brown; 
     transform: translateX(0); 
 }
@@ -335,4 +336,16 @@ header{
 
 .footer ul li {
     margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+}
+
+#footerEnds ul li:hover {
+    color:brown;
+}
+
+#footerEnds ul li:hover::after {
+    color:brown;
+    transform: translateX(0);
 }

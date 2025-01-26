@@ -1,35 +1,23 @@
-//loading header file in main html 
-function pageLoader(page) {
-    fetch(page)
-    .then(Response => {
-        if(!Response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return Response.text();
-    })
-    .then (data => {
-        document.getElementById("header-placeholder").innerHTML = data;
-    })
-    .catch(error => console.error('Error loading header:', error));
-
+function loadComponents(components) {
+    components.forEach(({ selector, file }) => {
+        fetch(file)
+            .then(response => {
+                if (!response.ok) throw new Error(`Failed to load ${file}`);
+                return response.text();
+            })
+            .then(data => document.querySelector(selector).innerHTML = data)
+            .catch(error => console.error(`Error loading ${file}:`, error));
+    });
 }
 
-pageLoader('header.html')
+// Load header, body, and footer
+loadComponents([
+    { selector: "#header-placeholder", file: "header.html" },
+    { selector: "#mainBody-placeholder", file: "body.html" },
+    { selector: "#footer-placeholder", file: "footer.html" }
+]);
 
-    //loading header ends 
-
-    fetch('footer.html')
-        .then(Response => {
-            if(!Response.ok) {
-                throw new Error ('Network responce was not ok');
-            }
-            return Response.text();
-        })
-        .then(data => {
-            document.getElementById("footer-placeholder").innerHTML = data;
-        })
-        .catch(error => console.error('Error Loading header: ', error));
-
+   
 function searchItem(){
     document.getElementById("search-form").submit();
 }
