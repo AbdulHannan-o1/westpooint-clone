@@ -57,9 +57,23 @@ header{
 }
 
 #searchInput:focus {
-    outline: none !important;
+    outline: none; /* Removes the default focus outline */
 }
-
+/* practice to remove default pesudo border starts here*/
+#searchInput:focus {
+    outline: none; /* Removes the default focus outline */
+    box-shadow: 0 0 0px rgba(0, 123, 255, 0.5); /* Adds a subtle blue glow*/
+    border: 0px solid rgba(0, 123, 255, 0.5);/* Adds a blue border */
+}
+/* css to remove the default clear button  */
+input[type="text"]::-webkit-clear-button {
+    display: none;
+}
+  
+input[type="text"]::-ms-clear {
+    display: none;
+}
+/* ends here  */
 #search-icon {
     padding-top: 5px;
     padding-right: 7px;
@@ -142,13 +156,25 @@ header{
     transition: background-color 0.3s ease, transform 0.3s; 
     transform: translateX(-100%); 
 }
-#List li:hover {
+#List li:hover, a:hover {
     color:brown; 
 }
 
 #List li:hover::after {
     background-color:brown; 
     transform: translateX(0); 
+}
+#list button:focus{
+    outline: none!important;
+    border: none !important;
+}
+.dropdown-link{
+    color: black;
+    text-decoration: none;
+}
+.dropdown-link:active{
+    /* color: brown; */
+    text-decoration: none;
 }
 
 #btnCloseOffCanvas{
