@@ -156,13 +156,51 @@ input[type="text"]::-ms-clear {
     transition: background-color 0.3s ease, transform 0.3s; 
     transform: translateX(-100%); 
 }
-#List li:hover, a:hover {
+#List li:hover, 
+    a:hover ,
+    .dropdown-table td:hover,
+    #kitchen-appliences a:hover{
     color:brown; 
 }
+.dropdown-link:hover + .dropdown-menu,
+.dropdown-menu:hover {
+    display: block;
+}
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: -10px;
+    width: 700px;
+    height: 500px; 
+}
+.dropdown-table{
+    /* display: grid; */
+    /* grid-template-columns: repeat(3, 1fr); */
+    padding-bottom: 20px;
+}
+.dropdown-table tr{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
 
-#List li:hover::after {
+#List li:hover::after, .dropdown-table td:hover::after{
     background-color:brown; 
     transform: translateX(0); 
+}
+#kitchen-appliences div{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+#kitchen-appliences a{
+    color: black;
+    text-decoration: none;
 }
 #list button:focus{
     outline: none!important;
