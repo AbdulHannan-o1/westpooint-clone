@@ -5,6 +5,7 @@ body {
   font-optical-sizing: auto;
   font-weight: weight;
   font-style: normal;
+  height: auto;
 }
 body{
   font-family: "Montserrat", sans-serif;
@@ -374,6 +375,7 @@ input[type="text"]::-ms-clear {
         width: 50px; 
     }
 }
+/* css for footer.html*/
 .footer {
     background-color: #F7F8FA;
     height: 50vh;
@@ -393,7 +395,7 @@ input[type="text"]::-ms-clear {
     margin-bottom: 15px;
 }
 
-.footer ul {
+.footer ul{
     list-style-type: none;
     padding: 0;
 }
@@ -413,3 +415,93 @@ input[type="text"]::-ms-clear {
     color:brown;
     transform: translateX(0);
 }
+/* Custom Accordion Styles */
+.accordion {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .accordion-item {
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .accordion-item:last-child {
+    border-bottom: none;
+  }
+  
+  .accordion-button {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: 600;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .accordion-button:not(.collapsed) {
+    background-color: gainsboro;
+    color: #fff;
+  }
+  
+  .accordion-button:hover {
+    background-color: #e9ecef;
+  }
+  
+  .accordion-button:not(.collapsed):hover {
+    background-color: gainsboro;
+  }
+  
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+  
+  .accordion-body {
+    padding: 15px 20px;
+    background-color: #fff;
+  }
+  
+  .accordion-body ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  
+  .accordion-body ul li {
+    padding: 8px 0;
+    color: #555;
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+  }
+  .accordion-body ul li:hover{
+    color: brown;
+    cursor: pointer;
+  }
+  
+  .accordion-body ul li strong {
+    color: #333;
+    font-weight: 800;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .accordion-button {
+      font-size: 14px;
+      padding: 12px 15px;
+    }
+  
+    .accordion-body ul li {
+      font-size: 13px;
+    }
+  }
+  /* Remove default focus outline and box-shadow */
+.accordion-button:focus {
+    outline: none !important; /* Removes the default outline */
+    box-shadow: none !important; /* Removes the default box-shadow */
+  }
+  
+  /*  Add custom focus styles for better accessibility */
+  .accordion-button:focus-visible {
+    background-color: #e9ecef; /* Light gray background on focus */
+    border: 1px solid #007bff; /* Blue border for focus indication */
+  }

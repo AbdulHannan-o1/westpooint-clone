@@ -50,3 +50,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach((header) => {
+        header.addEventListener('click', function() {
+            const currentItem = this.parentElement;
+
+            // Close all other accordion items
+            document.querySelectorAll('.accordion-item').forEach((item) => {
+                if(item !== currentItem) {
+                    item.classList.remove('open');
+                }
+            });
+            //Toggle the current item
+            currentItem.classList.toggle('active');
+        });
+    }); 
+});
