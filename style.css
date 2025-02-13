@@ -1,4 +1,4 @@
-
+/* css for index.html */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 body {
   font-family: "Montserrat", sans-serif;
@@ -297,12 +297,7 @@ input[type="text"]::-ms-clear {
 .manual-btn:hover{
     background-color:grey;
 }
-#heading1 h1{
-    color: #191919;
-}
-#heading-2{
-    color:#191919;
-}
+
 
 #links{
     padding: 0px 20px;
@@ -505,3 +500,23 @@ input[type="text"]::-ms-clear {
     background-color: #e9ecef; /* Light gray background on focus */
     border: 1px solid #007bff; /* Blue border for focus indication */
   }
+/* css for body.html */
+#heading1 h1{
+    color: #191919;
+}
+#heading-2{
+    color:#191919;
+}
+#categorieImagesDiv{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 0px 20px !important;
+    margin: 0px!important;
+}
+@media (max-width:576px) {
+    #categorieImagesDiv{
+        padding-left: 15px;
+    }
+    
+}
