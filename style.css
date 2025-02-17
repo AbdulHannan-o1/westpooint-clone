@@ -8,6 +8,17 @@ body {
   height: auto;
   max-width: 100%;
 }
+/* Ensure all elements use border-box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* Ensure images are responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
 body {
     overflow-x: hidden;
 }
