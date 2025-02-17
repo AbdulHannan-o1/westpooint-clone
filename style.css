@@ -8,6 +8,10 @@ body {
   height: auto;
   max-width: 100%;
 }
+body {
+    overflow-x: hidden;
+}
+
 body{
   font-family: "Montserrat", sans-serif;
 }
