@@ -517,7 +517,8 @@ input[type="text"]::-ms-clear {
     border: 1px solid #007bff; /* Blue border for focus indication */
   }
 /* css for body.html */
-#heading1 h1{
+#heading1 h1,
+#heading2 h1{
     color: #191919;
 }
 #heading-2{
@@ -536,3 +537,89 @@ input[type="text"]::-ms-clear {
     }
     
 }
+#heading2 h2{
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;   
+    font-weight: 800;
+}
+#heading-2 h2:hover{
+    font-weight: 600;
+}
+#heading2 h2:hover{
+    color: brown;
+}/* CSS */
+section{
+    background: ☐ #131313;
+    color: #fff;
+}
+.Container{
+    padding: 50px 0;
+}
+.wrapper{
+    padding: 10px 10%;
+}
+.card_area{
+    display: grid;
+    margin-top: 50px;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+.card{
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+.card img{
+    height: 350px;
+    width: 100%;
+    display : block;
+    border-radius:  10px ;
+    transition: transform 0.5s; 
+
+}
+.overlay{
+    height: 0;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    left: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background: linear-gradient(transparent,
+    #1c1c1c 60%);
+    padding: 0 50px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+
+.overlay h4{
+    margin-top: 55%;
+    margin-bottom: 5px;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+.overlay button{
+    padding: 10px 20px;
+    border: none;
+    background: #fff;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.5s;
+}
+.card:hover img{
+    transform: scale(1.2);
+}
+.card:hover .overlay{
+    height: 100%;
+} 
