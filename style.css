@@ -573,32 +573,32 @@ input[type="text"]::-ms-clear {
     transform: translateY(0);
 }
 
-.card-img-top {
+.cardImgTop {
     width: 100%;
     height: auto;
 }
 
 /* Media queries for responsive images */
 @media (max-width: 576px) {
-    .card-img-top {
+    .cardImgTop {
         height: 150px;
     }
 }
 
 @media (min-width: 577px) and (max-width: 768px) {
-    .card-img-top {
+    .cardImgTop {
         height: 200px;
     }
 }
 
 @media (min-width: 769px) and (max-width: 992px) {
-    .card-img-top {
+    .cardImgTop {
         height: 250px;
     }
 }
 
 @media (min-width: 993px) {
-    .card-img-top {
+    .cardImgTop {
         height: 300px;
     }
 }
@@ -630,4 +630,23 @@ input[type="text"]::-ms-clear {
     font-size: 19px;
     color: black;
     margin-right: 10px;
+}
+.carsForMobile{
+    margin-left: 20px;
+    margin-right: 20px;
+    height: 50px;
+}
+.cardContentForMobile {
+    
+    /* Remove transform and transition properties */
+    transform: none;
+    transition: none;
+    position: relative; /* Change from absolute to relative */
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transform: none;
+    transition: none;
+    padding: 10px; /* Add padding for spacing */
 }
