@@ -650,3 +650,8 @@ input[type="text"]::-ms-clear {
     transition: none;
     padding: 10px; /* Add padding for spacing */
 }
+@media (max-width: 576px) {
+    .addToCartButton {
+        font-size: 10px;
+    }
+}
