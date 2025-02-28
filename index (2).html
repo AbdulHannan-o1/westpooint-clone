@@ -1,0 +1,102 @@
+<html>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <script>
+        function toggleSection(sectionId, iconId) {
+            const section = document.getElementById(sectionId);
+            const icon = document.getElementById(iconId);
+            if (section.classList.contains('d-none')) {
+                section.classList.remove('d-none');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                section.classList.add('d-none');
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+
+        function updateSlider() {
+            const minInput = document.getElementById('min-price');
+            const maxInput = document.getElementById('max-price');
+            const minValue = parseInt(minInput.value);
+            const maxValue = parseInt(maxInput.value);
+            const slider = document.getElementById('price-slider');
+            const minSlider = document.getElementById('min-slider');
+            const maxSlider = document.getElementById('max-slider');
+
+            if (minValue > maxValue) {
+                minInput.value = maxValue;
+            }
+
+            minSlider.value = minValue;
+            maxSlider.value = maxValue;
+
+            slider.style.left = (minValue / minSlider.max) * 100 + '%';
+            slider.style.right = 100 - (maxValue / maxSlider.max) * 100 + '%';
+        }
+
+        function syncInputs() {
+            const minSlider = document.getElementById('min-slider');
+            const maxSlider = document.getElementById('max-slider');
+            const minInput = document.getElementById('min-price');
+            const maxInput = document.getElementById('max-price');
+
+            minInput.value = minSlider.value;
+            maxInput.value = maxSlider.value;
+
+            updateSlider();
+        }
+    </script>
+</head>
+<body class="bg-white p-4">
+    <div class="container">
+        <!-- Collections Section -->
+        <div class="mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h2 class="h5 fw-bold text-dark">COLLECTIONS</h2>
+                <i id="collections-icon" class="fas fa-minus text-dark cursor-pointer" onclick="toggleSection('collections-content', 'collections-icon')"></i>
+            </div>
+            <ul id="collections-content" class="list-unstyled">
+                <li class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="text-dark">BEAUTY & HEALTH</span>
+                    <i class="fas fa-plus text-dark"></i>
+                </li>
+                <li class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="text-dark">HOUSEHOLD APPLIANCES</span>
+                    <i class="fas fa-plus text-dark"></i>
+                </li>
+                <li class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="text-dark">KITCHEN APPLIANCES</span>
+                    <i class="fas fa-plus text-dark"></i>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Price Section -->
+        <div>
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h2 class="h5 fw-bold text-dark">PRICE</h2>
+                <i id="price-icon" class="fas fa-minus text-dark cursor-pointer" onclick="toggleSection('price-content', 'price-icon')"></i>
+            </div>
+            <div id="price-content">
+                <div class="d-flex align-items-center mb-3">
+                    <input id="min-price" type="number" value="0" min="0" max="17190" class="form-control w-25 me-2" oninput="updateSlider()">
+                    <span class="text-dark">—</span>
+                    <input id="max-price" type="number" value="17190" min="0" max="17190" class="form-control w-25 ms-2" oninput="updateSlider()">
+                </div>
+                <div class="position-relative">
+                    <input id="min-slider" type="range" min="0" max="17190" value="0" class="form-range position-absolute w-100" oninput="syncInputs()">
+                    <input id="max-slider" type="range" min="0" max="17190" value="17190" class="form-range position-absolute w-100" oninput="syncInputs()">
+                    <div id="price-slider" class="position-absolute bg-danger" style="height: 4px; left: 0%; right: 0%;"></div>
+                    <div class="position-absolute d-flex justify-content-between w-100 px-2" style="top: -10px;">
+                        <div class="bg-white border border-secondary rounded-circle" style="width: 16px; height: 16px;"></div>
+                        <div class="bg-white border border-secondary rounded-circle" style="width: 16px; height: 16px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
