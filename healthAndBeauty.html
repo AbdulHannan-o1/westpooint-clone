@@ -28,29 +28,29 @@
         <section class="sidebar">
             <div class="container">
                 <!-- Collections Section -->
-                <div class="mb-4">
+                <div class="mb-4 d-none d-sm-block">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <h2 class="h5 fw-bold text-dark">COLLECTIONS</h2>
                         <i id="collections-icon" class="fas fa-minus text-dark cursor-pointer" onclick="toggleSection('collections-content', 'collections-icon')"></i>
                     </div>
                     <ul id="collections-content" class="list-unstyled">
                         <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-dark">BEAUTY & HEALTH</span>
+                            <span id="collections-content" class="text-dark">BEAUTY & HEALTH</span>
                             <i class="fas fa-plus text-dark"></i>
                         </li>
                         <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-dark">HOUSEHOLD APPLIANCES</span>
+                            <span id="collections-content" class="text-dark">HOUSEHOLD APPLIANCES</span>
                             <i class="fas fa-plus text-dark"></i>
                         </li>
                         <li class="d-flex justify-content-between align-items-center mb-2">
-                            <span class="text-dark">KITCHEN APPLIANCES</span>
+                            <span id="collections-content" class="text-dark">KITCHEN APPLIANCES</span>
                             <i class="fas fa-plus text-dark"></i>
                         </li>
                     </ul>
                 </div>
 
                 <!-- Price Section -->
-                <div>
+                <div class="d-none d-sm-block">
                     <div class="d-flex justify-content-between align-items-center mb-2">
                         <h2 class="h5 fw-bold text-dark">PRICE</h2>
                         <i id="price-icon" class="fas fa-minus text-dark cursor-pointer" onclick="toggleSection('price-content', 'price-icon')"></i>
@@ -80,7 +80,6 @@
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2 class="font-weight-bold">Health &amp; Beauty</h2>
                 <div class="d-flex align-items-center">
-                    <span class="mr-2">Featured</span>
                     <i class="fas fa-th-large mr-2"></i>
                     <i class="fas fa-th-list"></i>
                 </div>
@@ -293,6 +292,263 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- for mobile  -->
+                <section class="bg-white text-dark d-sm-none">
+                    <div class="container py-4">
+                     <div class="d-flex justify-content-between align-items-center mb-4">
+                      <button class="btn btn-link text-danger d-flex align-items-center" id="filterButton">
+                       <i class="fas fa-filter mr-2">
+                       </i>
+                       <span>
+                        FILTER
+                       </span>
+                      </button>
+                      <div class="d-flex">
+                       <button class="btn btn-link" id="gridButton">
+                        <i class="fas fa-th-large">
+                        </i>
+                       </button>
+                       <button class="btn btn-link" id="listButton">
+                        <i class="fas fa-bars">
+                        </i>
+                       </button>
+                      </div>
+                     </div>
+                     <div class="row" id="productGrid">
+                        <div class="row row-cols-2 row-cols-md-4 g-3  d-sm-none">
+                            <div class="col">
+                              <div class="card h-100 ">
+                                <img src="images/better 1.jpg" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                <div class="card-content cardContentForMobile">
+                                    <div class="card-body">
+                                        <h5 class="card-title">WF-9201</h5>
+                                        <p class="card-text card-text02">Hand Mixer WF </p>
+                                        <p class="card-text ">Rs.7,740.00</p>
+                                    </div>
+                                    <div class="buttonDiv">
+                                        <div class="addToCartButton mx-auto" > <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- caard 2 -->
+                            <div class="col">
+                              <div class="card h-100">
+                                <img src="images/food prosesor.jpg" class="card-img-top" alt="...">
+                                <div class="card-content cardContentForMobile">
+                                    <div class="card-body">
+                                        <h5 class="card-title">WF-7806</h5>
+                                        <p class="card-text card-text02">Professional Kitchen Chef WF-7806</p>
+                                        <p class="card-text ">Rs.23,220.00</p>
+                                    </div>
+                                    <div class="buttonDiv">
+                                        <div class="addToCartButton mx-auto" > <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- card 3 -->
+                            <div class="col">
+                                <div class="card h-100 ">
+                                    <img src="images/DRYER.webp" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-6201</h5>
+                                            <p class="card-text card-text02">Hair Dryer WF-6201</p>
+                                            <p class="card-text ">Rs.4,941.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 4 -->
+                            <div class="col">
+                                <div class="card h-100 ">
+                                    <img src="images/brtter 2.jpg" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-9501</h5>
+                                            <p class="card-text card-text02">Hand Mixer</p>
+                                            <p class="card-text ">Rs.7,740.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 5 -->
+                            <div class="col">
+                                <div class="card h-100 cardsForMobile">
+                                    <img src="images/blender.jpg" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-314</h5>
+                                            <p class="card-text card-text02">Blender and Grinder 3 in 1</p>
+                                            <p class="card-text ">Rs.9,720.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 6 -->
+                            <div class="col">
+                                <div class="card h-100 cardsForMobile">
+                                    <img src="images/chopper.jpg" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-506</h5>
+                                            <p class="card-text card-text02">Kitchen Robot WF-506</p>
+                                            <p class="card-text ">Rs.18,270.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 7 -->
+                            <div class="col">
+                                <div class="card h-100 cardsForMobile">
+                                    <img src="images/citrus.jpg" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-555</h5>
+                                            <p class="card-text card-text02">Citrus Juicer  WF-555</p>
+                                            <p class="card-text ">Rs.12,240.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 8 -->
+                            <div class="col">
+                                <div class="card h-100 cardsForMobile">
+                                    <img src="images/room humidifier.jpg" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-1201</h5>
+                                            <p class="card-text card-text02">Ultrasonic Room Humidifier  WF-1201</p>
+                                            <p class="card-text ">Rs.13,860.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 9 -->
+                            <div class="col">
+                                <div class="card h-100 cardsForMobile">
+                                    <img src="images/toaster.jpg" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-2589</h5>
+                                            <p class="card-text card-text02">Pop-Up Toaster WF-2589</p>
+                                            <p class="card-text ">Rs.9,180.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 10 -->
+                            <div class="col">
+                                <div class="card h-100 cardsForMobile">
+                                    <img src="images/sandwhich maker.jpg" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-6293</h5>
+                                            <p class="card-text card-text02">Sandwich Toaster 3 in 1</p>
+                                            <p class="card-text ">Rs.11,985.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 11 -->
+                            <div class="col">
+                                <div class="card h-100 cardsForMobile">
+                                    <img src="images/CURLER.avif" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-6811</h5>
+                                            <p class="card-text card-text02">Hair Curler & Straightener</p>
+                                            <p class="card-text ">Rs.6,930.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- card 12 -->
+                            <div class="col">
+                                <div class="card h-100 cardsForMobile">
+                                    <img src="images/DRYER.webp" class="card-img-top cardImgTop img-fluid" alt="eag beater image">
+                                    <div class="card-content cardContentForMobile">
+                                        <div class="card-body">
+                                            <h5 class="card-title">WF-6201</h5>
+                                            <p class="card-text card-text02">Hair Dryer WF-6201</p>
+                                            <p class="card-text ">Rs.4,941.00</p>
+                                        </div>
+                                        <div class="buttonDiv">
+                                            <div class="addToCartButton mx-auto"> <i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                          </div>
+                    </div>
+                    <div class="fixed-bottom mb-4 mr-4" style="right: 0;">
+                     <div class="position-relative">
+                      <button class="btn btn-danger rounded-circle p-3 shadow-lg">
+                       <i class="fas fa-comment-dots">
+                       </i>
+                      </button>
+                      <span class="badge badge-pill badge-pink position-absolute" style="top: -5px; right: -5px;">
+                       1
+                      </span>
+                     </div>
+                    </div>
+                    <!-- Offcanvas Sidebar -->
+                    <div class="fixed-top bg-white shadow-lg offcanvas" id="offcanvas" style="width: 250px; height: 100%;">
+                        <div class="p-4">
+                            <h2 class="h4 font-weight-bold mb-4">Filter</h2>
+                            <div class="mb-4">
+                                <h3 class="h5 font-weight-semibold mb-2">Price</h3>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Min:</span>
+                                    <input id="min-price" type="number" value="0" min="0" max="17190" class="form-control w-50" oninput="updateSlider()">
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>Max:</span>
+                                    <input id="max-price" type="number" value="17190" min="0" max="17190" class="form-control w-50" oninput="updateSlider()">
+                                </div>
+                                <div class="position-relative mt-3">
+                                    <input id="min-slider" type="range" min="0" max="17190" value="0" class="form-range position-absolute w-100" oninput="syncInputs()">
+                                    <input id="max-slider" type="range" min="0" max="17190" value="17190" class="form-range position-absolute w-100" oninput="syncInputs()">
+                                    <div id="price-slider" class="position-absolute bg-danger visually-hidden" style="height: 4px; left: 0%; right: 0%;"></div>
+                                    <div id="price-slider" class="position-absolute d-flex justify-content-between w-100 px-2" style="top: -10px;">
+                                        <!-- <div class="bg-white border border-secondary rounded-circle" style="width: 16px; height: 16px;"></div> -->
+                                        <!-- <div class="bg-white border border-secondary rounded-circle" style="width: 16px; height: 16px;"></div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-danger btn-block" id="applyButton">Apply</button>
                         </div>
                     </div>
                 </section>

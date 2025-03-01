@@ -117,3 +117,64 @@ function syncInputs() {
 
     updateSlider();
 }
+// const filterButton = document.getElementById('filterButton');
+// const offcanvas = document.getElementById('offcanvas');
+// const applyButton = document.getElementById('applyButton');
+// const gridButton = document.getElementById('gridButton');
+// const listButton = document.getElementById('listButton');
+// const productGrid = document.getElementById('productGrid');
+
+// filterButton.addEventListener('click', () => {
+//     offcanvas.classList.add('show');
+// });
+// applyButton.addEventListener('click', () => {
+//     offcanvas.classList.remove('show');
+// });
+
+// document.addEventListener('click', (event) => {
+//     if (!offcanvas.contains(event.target) && !filterButton.contains(event.target)) {
+//         offcanvas.classList.remove('show');
+//     }
+// });
+
+// gridButton.addEventListener('click', () => {
+//     productGrid.classList.remove('grid-cols-1');
+//     productGrid.classList.add('grid-cols-2');
+// });
+
+// listButton.addEventListener('click', () => {
+//     productGrid.classList.remove('grid-cols-2');
+//     productGrid.classList.add('grid-cols-1');
+// });
+document.addEventListener('DOMContentLoaded', function() {
+    const filterButton = document.getElementById('filterButton');
+    const offcanvas = document.getElementById('offcanvas');
+    const applyButton = document.getElementById('applyButton');
+    const gridButton = document.getElementById('gridButton');
+    const listButton = document.getElementById('listButton');
+    const productGrid = document.getElementById('productGrid');
+
+    filterButton.addEventListener('click', () => {
+        offcanvas.classList.add('show');
+    });
+
+    applyButton.addEventListener('click', () => {
+        offcanvas.classList.remove('show');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!offcanvas.contains(event.target) && !filterButton.contains(event.target)) {
+            offcanvas.classList.remove('show');
+        }
+    });
+
+    gridButton.addEventListener('click', () => {
+        productGrid.classList.remove('grid-cols-1');
+        productGrid.classList.add('grid-cols-2');
+    });
+
+    listButton.addEventListener('click', () => {
+        productGrid.classList.remove('grid-cols-2');
+        productGrid.classList.add('grid-cols-1');
+    });
+});
