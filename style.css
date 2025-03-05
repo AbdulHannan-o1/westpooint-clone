@@ -738,3 +738,6 @@ input[type="text"]::-ms-clear {
     width: 250px;
     height: 100%;
 }
+p.index.html{
+    overflow-x: hidden;
+}
