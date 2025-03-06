@@ -739,5 +739,5 @@ input[type="text"]::-ms-clear {
     height: 100%;
 }
 p.index.html{
-    overflow-x: hidden;
+    width: 100%;
 }
