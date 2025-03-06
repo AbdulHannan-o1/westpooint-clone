@@ -741,3 +741,31 @@ input[type="text"]::-ms-clear {
 p.index.html{
     overflow-x: hidden;
 }
+/* Custom slider styling */
+.form-range::-webkit-slider-thumb {
+    background:brown !important; /* Brown color for Webkit browsers */
+}
+
+.form-range::-moz-range-thumb {
+    background:brown  !important; /* Brown color for Firefox */
+}
+
+.form-range::-ms-thumb {
+    background: brown !important; /* Brown color for IE/Edge */
+}
+
+.form-range::-webkit-slider-runnable-track {
+    background: gainsboro!important; /* Lighter brown for the track */
+}
+
+.form-range::-moz-range-track {
+    background:gainsboro !important; /* Lighter brown for the track */
+}
+
+.form-range::-ms-track {
+    background: gainsboro !important; /* Lighter brown for the track */
+}
+
+#price-slider {
+    background-color: gainsboro !important; /* Brown color for the price slider */
+}
