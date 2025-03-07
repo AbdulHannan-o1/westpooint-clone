@@ -769,3 +769,6 @@ p.index.html{
 #price-slider {
     background-color: gainsboro !important; /* Brown color for the price slider */
 }
+#main-img{
+    margin-top: 15px;
+}
