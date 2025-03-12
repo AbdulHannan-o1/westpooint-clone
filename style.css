@@ -7,6 +7,7 @@ body {
   font-style: normal;
   height: auto;
   max-width: 100%;
+  width: 100%;
 }
 /* Ensure all elements use border-box sizing */
 *,
@@ -35,7 +36,7 @@ header{
 }
 #info{
     margin-top: 5px;
-    width: 100vw;
+    width: 100%;
     height: 6vh;
     background-color: maroon;
     color: white;
@@ -295,7 +296,7 @@ input[type="text"]::-ms-clear {
 /*css for manual navigation */
 .navigation-manual{
     position: absolute;
-    width: 1300px;
+    width: 100%;
         margin-top: -20px;
     display: flex;
     justify-content: center;
@@ -771,4 +772,5 @@ p.index.html{
 }
 #main-img{
     margin-top: 15px;
+    width: 100%;
 }
