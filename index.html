@@ -61,6 +61,7 @@
     <!-- updating git hub  -->
     <!--including main body-->
     <div id="mainBody-placeholder"></div>
+    
     <!--category images -->
     
     <!--including fotter -->
@@ -70,6 +71,15 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
         crossorigin="anonymous"></script>
     <!--script for main javascript-->
+    <script src="product.js"></script>
     <script src="main.js"></script>
+    <script>
+        // Initialize component loading
+        loadComponents([
+            { selector: "#header-placeholder", file: "header.html" },
+            { selector: "#mainBody-placeholder", file: "body.html" },
+            { selector: "#footer-placeholder", file: "footer.html" }
+        ]);
+    </script>
 </body>
 </html>
