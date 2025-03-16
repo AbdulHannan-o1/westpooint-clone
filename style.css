@@ -774,3 +774,9 @@ p.index.html{
     margin-top: 15px;
     width: 100%;
 }
+#healthAndBeautyProducts .col,
+#healthAndBeautyProducts .card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}

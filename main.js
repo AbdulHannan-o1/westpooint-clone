@@ -168,3 +168,9 @@ document.addEventListener('DOMContentLoaded', function() {
         productGrid.classList.add('grid-cols-1');
     });
 });
+ document.getElementById('filterBtn').addEventListener('click', function() {
+        document.getElementById('filterSidebar').classList.add('active');
+    });
+    document.getElementById('closeFilter').addEventListener('click', function() {
+        document.getElementById('filterSidebar').classList.remove('active');
+    });
