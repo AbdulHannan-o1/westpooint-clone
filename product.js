@@ -378,6 +378,113 @@ const products = [
     image: "KAP-12.AVIF",
     description: "Cold Press Juicer",
     price: "Rs.15,760.00"
+  },
+  // smart accessories products 
+  {
+    id: 49,
+    title: "WF-120",
+    image : "sa-1.avif",
+    description: "Smart buds WF-120",
+    price : "Rs. 7,700.00"
+  },
+  {
+    id: 50,
+    title: "WF-121",
+    image : "sa-2.avif",
+    description: "Smart headphones WF-121",
+    price : "Rs. 9,700.00"
+  },
+  {
+    id: 51, 
+    title: "WF-122",
+    image : "sa-3.avif",
+    description: "Smart power bank WF-122",
+    price :"Rs. 15,700.00"
+  },
+  {
+    id: 52,
+    title: "WF-123",
+    image : "sa-4.avif",
+    description: "Smart watch WF-123",
+    price : "Rs. 17,700.00"
+  },
+  {
+    id: 53,
+    title: "WF-124",
+    image : "sa-5.avif",
+    description: "Smart band WF-124",
+    price : "Rs. 5,700.00"
+  },
+  {
+    id: 54,
+    title: "WF-125",
+    image : "sa-6.avif",
+    description: "Smart speaker WF-125",
+    price : "Rs. 8,700.00"
+  },
+  {
+    id: 55,
+    title: "WF-126",
+    image : "sa-7.avif",
+    description: "Smart camera WF-126",
+    price : "Rs. 10,700.00"
+  },
+  {
+    id: 56,
+    title: "WF-127",
+    image : "sa-8.avif",
+    description: "Smart bulb WF-127",
+    price : "Rs. 2,700.00"
+  },
+  {
+    id: 57,
+    title: "WF-128",
+    image : "sa-9.avif",
+    description: "Smart plug WF-128",
+    price : "Rs. 3,700.00"
+  },
+  {
+    id: 58,
+    title: "WF-129",
+    image : "sa-10.avif",
+    description: "Smart doorbell WF-129",
+    price : "Rs. 4,700.00"
+  },
+  {
+    id: 59,
+    title: "WF-130",
+    image : "sa-11.avif",
+    description: "Smart lock WF-130",
+    price : "Rs. 6,700.00"
+  },
+  {
+    id: 60,
+    title: "WF-131",
+    image : "sa-12.avif",
+    description: "Smart thermostat WF-131",
+    price : "Rs. 9,700.00"
+  },
+  // deals products
+  {
+    id: 61,
+    title: "Bleasing Deal 1",
+    image : "Deal-1.avif",
+    description: "",
+    price : "Rs. 64,000.00"
+  },
+  {
+    id: 62,
+    title: "Bleasing Deal 2",
+    image : "Deal-2.avif",
+    description: "",
+    price : "Rs. 55,000.00"
+  },
+  {
+    id: 63,
+    title: "Bleasing Deal 3",
+    image : "Deal-3.avif",
+    description: "",
+    price : "Rs. 36,000.00"
   }
 ];
 // function to display products
@@ -385,13 +492,17 @@ const healthAndBeautyProducts = products.filter(product=> product.id >= 1 && pro
 const bestSellingProducts = products.filter(product=> product.id >= 13 && product.id <= 24);
 const householdProducts = products.filter(product=> product.id >= 25 && product.id <= 36);
 const kitchenAppliancesProducts = products.filter(product=> product.id >= 37 && product.id <= 48);
+const smartAccessoriesProducts = products.filter(product=> product.id >= 49 && product.id <= 60);
+const deals = products.filter(product=> product.id >= 61 && product.id <= 63);
 
 function initializeProducts() {
     const healthContainer = document.getElementById('healthAndBeautyProducts');
     const bestContainer = document.getElementById('bestSellingProducts');
     const householdContainer = document.getElementById('householdProducts'); 
     const kitchenContainer = document.getElementById('kitchenAppliancesProducts');
-    
+    const smartContainer = document.getElementById('smartAccessoriesProducts');
+    const dealsContainer = document.getElementById('deals');
+
     if (healthContainer) {
         console.log('Rendering health and beauty products');
         let healthCards = '';
@@ -425,29 +536,27 @@ function initializeProducts() {
         kitchenCards += generateProductCard(c);
     });
     kitchenContainer.innerHTML = kitchenCards;
-}
+  }
+  if (smartContainer) {
+    console.log('Rendering smart products');
+    let smartCards = '';
+    smartAccessoriesProducts.forEach(c => {
+        smartCards += generateProductCard(c);
+    });
+    smartContainer.innerHTML = smartCards;
+  }
+  if (dealsContainer) {
+    console.log('Rendering deals');
+    let dealsCards = '';
+    deals.forEach(c => {
+        dealsCards += generateProductCard(c);
+    });
+    dealsContainer.innerHTML = dealsCards;
+  }
 }
 
 // Helper function to generate product card HTML
 function generateProductCard(product) {
-    // return `
-    //     <div class="col">
-    //         <div class="card">
-    //             <span class="sale-badge">Sale 10%</span>
-    //             <img src="images/${product.image}" class="card-img-top cardImgTop img-fluid" alt="${product.description}">
-    //             <div class="card-content">
-    //                 <div class="card-body">
-    //                     <h5 class="card-title">${product.title}</h5>
-    //                     <p class="card-text card-text02">${product.description}</p>
-    //                     <p class="card-text">${product.price}</p>
-    //                 </div>
-    //                 <div class="buttonDiv">
-    //                     <div class="addToCartButton mx-auto"><i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-    // `;
     if (window.innerWidth <= 545) {
       console.log("Small screen (mobile or tablet)");
       return `
