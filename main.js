@@ -174,3 +174,15 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('closeFilter').addEventListener('click', function() {
         document.getElementById('filterSidebar').classList.remove('active');
     });
+
+// js for contact us form 
+function hidePlaceholder(element) {
+    element.setAttribute("data-placeholder", element.placeholder); // Store placeholder
+    element.placeholder = ""; // Hide placeholder
+}
+
+function showPlaceholder(element) {
+    if (element.value === "") {
+        element.placeholder = element.getAttribute("data-placeholder"); // Restore if empty
+    }
+}

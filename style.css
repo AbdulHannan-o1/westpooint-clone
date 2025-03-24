@@ -27,6 +27,9 @@ body {
 body{
   font-family: "Montserrat", sans-serif;
 }
+.faviconImg{
+    size: 16*16;
+}
 .para{
     padding: 0;
     margin: 0;
@@ -820,4 +823,32 @@ p.index.html{
 #AUTH-DE p{
     font-size: 14px;
     padding: 0px 0px 32px;
+}
+#Icon-CU{
+    font-size: 55px;
+    color: #a61c20;
+}
+
+/* css fpr contact form  */
+#contactUsForm .form-control {
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark text for contrast */
+    border: none; /* Remove default border */
+}
+
+#contactUsForm.form-control:focus {
+    background-color: #ffffff; /* White background when focused */
+    border: 1px solid #a32020; /* Optional: Add border on focus */
+    box-shadow: none; /* Remove default Bootstrap glow */
+}
+
+.sendMessBTN {
+    background-color: #a32020;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+}
+.sendMessBTN:hover {
+    background-color: #8c1a1d;
+    color: #fff;
 }
