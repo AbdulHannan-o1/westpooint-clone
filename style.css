@@ -119,7 +119,13 @@ input[type="text"]::-ms-clear {
     margin-right: 55px;
     font-size: 18px;
     cursor: pointer;
+    border: none!important;
+    
 }
+#personIcon:hover{
+    color: brown;
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -635,6 +641,10 @@ input[type="text"]::-ms-clear {
     color: black;
     margin-right: 10px;
 }
+.cartIcon{
+    color: black;
+    cursor: pointer;
+}
 .carsForMobile{
     margin-left: 20px;
     margin-right: 20px;
@@ -851,4 +861,20 @@ p.index.html{
 .sendMessBTN:hover {
     background-color: #8c1a1d;
     color: #fff;
+}
+#personDropDown i{
+    padding-right: 5px;
+}
+#personDropDown{
+    color: black;
+    font-family: "Montserrat", sans-serif;
+    height: auto;
+    margin-right:25px
+}
+#personDropDown a:hover{
+    color: brown;
+}
+#personDropDown a:visited{
+    background-color:white!important;
+    text-decoration: none;
 }

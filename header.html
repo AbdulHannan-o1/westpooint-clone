@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <title>Header</title>
     <link rel="stylesheet" href="normalize.css">
 
     <!-- Google font Link-->
@@ -64,19 +64,29 @@
                         </div>
                     </div>
                     <div id="icon" class="d-flex align-items-center">
-                        <button type="button" class="btn" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-title="cart">
-                        <span id="cartIcon" class="me-3"><i class="bi bi-cart-fill"></i></span>
+                       <a href="shopping cart.html" class="cartIcon">
+                            <span id="cartIcon"><i class="bi bi-cart-fill"></i></span>
+                  
+                       </a> 
+                       <div class="dropdown">
+                        <button id="personIcon" class="btn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span id="personIcon"><i class="bi bi-person"></i></span>
                         </button>
-                        <span id="personIcon"><i class="bi bi-person"></i></span>
+                        <ul class="dropdown-menu" id="personDropDown">
+                          <li><a class="dropdown-item" href="#">
+                            <i class="bi bi-box-arrow-in-right"></i>SignIn</a></li>
+                          <li><a class="dropdown-item" href="#">
+                            <i class="bi bi-person"></i>Register</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="bi bi-check" class="checkoutIcon"></i>
+                            Checkout</a></li>
+                        </ul>
+                      </div>
+                       
                     </div>
                 </div>
             </nav>
             <div class="d-none d-lg-block ">
                 <div id="CategoryDiv" class="contianer bg-light ">
-                    <!--responsivness not working 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#List" aria-controls="List" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>-->
                     <ul id="List" class="nav-bar nav sticky-top">
                         <li>
                             <a href="#" data-bs-toggle="dropdown" >
@@ -317,14 +327,18 @@
             </div>
         </div>
         </div>
+        
     </header>
 
     <!--script for boorstrap-->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <!--script for main javascript-->
     <script src="main.js"></script>
+
+    
 </body>
 
 </html>
