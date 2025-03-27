@@ -869,6 +869,7 @@ p.index.html{
     color: black;
     font-family: "Montserrat", sans-serif;
     height: auto;
+    width: auto;
     margin-right:25px
 }
 #personDropDown a:hover{
@@ -877,4 +878,36 @@ p.index.html{
 #personDropDown a:visited{
     background-color:white!important;
     text-decoration: none;
+}
+.RegisterPage{
+    font-family: "Montserrat", sans-serif;
+}
+.form-section {
+    border: 1px solid #dee2e6;
+    padding: 30px;
+    height: 100%;
+}
+.form-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.account-btn{
+    border: 1px solid maroon;
+    color: maroon;
+    padding: 10px 25px;
+    transition: all 0.3s;
+}
+.account-btn:hover {
+    background-color:maroon;
+    color: white;
+}
+.required-field::after {
+    content: " *";
+    color: #dc3545;
+}
+.signUpPage{
+    font-family: "Montserrat", sans-serif;
+    margin-left: 250px;
 }
