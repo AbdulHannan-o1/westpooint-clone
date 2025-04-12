@@ -468,21 +468,21 @@ const products = [
   {
     id: 61,
     title: "Bleasing Deal 1",
-    image : "Deal-1.avif",
+    image : "deal-1.avif",
     description: "",
     price : "Rs. 64,000.00"
   },
   {
     id: 62,
     title: "Bleasing Deal 2",
-    image : "Deal-2.avif",
+    image : "deal-2.avif",
     description: "",
     price : "Rs. 55,000.00"
   },
   {
     id: 63,
     title: "Bleasing Deal 3",
-    image : "Deal-3.avif",
+    image : "deal-3.avif",
     description: "",
     price : "Rs. 36,000.00"
   }
