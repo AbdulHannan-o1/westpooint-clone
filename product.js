@@ -305,77 +305,77 @@ const products = [
   {
     id: 38,
     title: "Food Processor",
-    image: "KAP-2.AVIF",
+    image: "KAP-2.avif",
     description: "Multi-Function Food Processor",
     price: "Rs.6,930.00"
   },
   {
     id: 39,
     title: "Electric Kettle",
-    image: "KAP-3.AVIF",
+    image: "KAP-3.avif",
     description: "Stainless Steel Electric Kettle",
     price: "Rs.4,941.00"
   },
   {
     id: 40,
     title: "Coffee Maker",
-    image: "KAP-4.AVIF",
+    image: "KAP-4.avif",
     description: "Automatic Coffee Maker",
     price: "Rs.7,920.00"
   },
   {
     id: 41,
     title: "Air Fryer",
-    image: "KAP-5.AVIF",
+    image: "KAP-5.avif",
     description: "Digital Air Fryer XL",
     price: "Rs.16,030.00"
   },
   {
     id: 42,
     title: "Rice Cooker",
-    image: "KAP-6.AVIF",
+    image: "KAP-6.avif",
     description: "Multi-Function Rice Cooker",
     price: "Rs.8,910.00"
   },
   {
     id: 43,
     title: "Blender",
-    image: "KAP-7.AVIF",
+    image: "KAP-7.avif",
     description: "High-Speed Power Blender",
     price: "Rs.17,190.00"
   },
   {
     id: 44,
     title: "Toaster Oven",
-    image: "KAP-8.AVIF",
+    image: "KAP-8.avif",
     description: "Digital Toaster Oven",
     price: "Rs.12,420.00"
   },
   {
     id: 45,
     title: "Slow Cooker",
-    image: "KAP-9.AVIF",
+    image: "KAP-9.avif",
     description: "Programmable Slow Cooker",
     price: "Rs.14,680.00"
   },
   {
     id: 46,
     title: "Food Steamer",
-    image: "KAP-10.AVIF",
+    image: "KAP-10.avif",
     description: "Digital Food Steamer",
     price: "Rs.15,130.00"
   },
   {
     id: 47,
     title: "Waffle Maker",
-    image: "KAP-11.AVIF",
+    image: "KAP-11.avif",
     description: "Belgian Waffle Maker",
     price: "Rs.13,860.00"
   },
   {
     id: 48,
     title: "Juicer",
-    image: "KAP-12.AVIF",
+    image: "KAP-12.avif",
     description: "Cold Press Juicer",
     price: "Rs.15,760.00"
   },
