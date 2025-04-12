@@ -298,7 +298,7 @@ const products = [
   {
     id: 37,
     title: "Hand Mixer",
-    image: "KAP-1.AVIF",
+    image: "KAP-1.avif",
     description: "Professional Hand Mixer Pro",
     price: "Rs.8,460.00"
   },
