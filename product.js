@@ -31,12 +31,12 @@ function syncInputs() {
     priceSlider.style.right = `${100 - maxPercent}%`;
   }
   
-  // Initialize the slider and inputs
-  // document.getElementById('min-price').value = minInit;
-  // document.getElementById('max-price').value = maxInit;
-  // document.getElementById('min-slider').value = minInit;
-  // document.getElementById('max-slider').value = maxInit;
-  // updateSlider();
+   //Initialize the slider and inputs
+   document.getElementById('min-price').value = minInit;
+   document.getElementById('max-price').value = maxInit;
+  document.getElementById('min-slider').value = minInit;
+   document.getElementById('max-slider').value = maxInit;
+  updateSlider();
 //   js for dynamic cards 
 const products = [
     // from 1 to 12 health and beauty products
@@ -495,6 +495,7 @@ const kitchenAppliancesProducts = products.filter(product=> product.id >= 37 && 
 const smartAccessoriesProducts = products.filter(product=> product.id >= 49 && product.id <= 60);
 const deals = products.filter(product=> product.id >= 61 && product.id <= 63);
 
+//functions to initialize product 
 function initializeProducts() {
     const healthContainer = document.getElementById('healthAndBeautyProducts');
     const bestContainer = document.getElementById('bestSellingProducts');
