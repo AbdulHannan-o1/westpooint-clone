@@ -33,3 +33,15 @@ const signUp=()=> {
      alert(`Error: ${errorMessage}`);
   });
 };
+//logging user out 
+const logout = () => {
+  firebase.auth().signOut()
+    .then(() => {
+    window.location.href = "index.html";
+    alert("you are loged out successfully")
+  })
+  .catch((error) => {
+    console.error("Error signing out:", error);
+    alert("email or password is incorrect")
+  });
+}
