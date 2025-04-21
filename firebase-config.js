@@ -33,6 +33,22 @@ const signUp=()=> {
      alert(`Error: ${errorMessage}`);
   });
 };
+// logging user back in 
+var email = document.getElementById("email").value;
+var password = document.getElementById("password").value;
+firebase.auth().signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+   window.location.href = "index.html";
+   alert ("you are loged in successfully")
+    var user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.error("Error signing in:", errorCode, errorMessage);
+    alert("email or password is incorrect")
+  });
 //logging user out 
 const logout = () => {
   firebase.auth().signOut()
