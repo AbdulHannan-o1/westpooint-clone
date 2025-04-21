@@ -36,6 +36,7 @@ const signUp=()=> {
 // logging user back in 
 var email = document.getElementById("email").value;
 var password = document.getElementById("password").value;
+const login = () => {
 firebase.auth().signInWithEmailAndPassword(email, password)
   .then((userCredential) => {
    window.location.href = "index.html";
@@ -49,6 +50,7 @@ firebase.auth().signInWithEmailAndPassword(email, password)
     console.error("Error signing in:", errorCode, errorMessage);
     alert("email or password is incorrect")
   });
+}
 //logging user out 
 const logout = () => {
   firebase.auth().signOut()
