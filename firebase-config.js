@@ -10,10 +10,9 @@ const db = firebaseApp.firestore();
 const auth = firebaseApp.auth();
 // Example: Sign-up function
 const signUp=()=> {
-    const email = document.getElementById("E-mail").value;
-    const password = document.getElementById("P-assword").value;
-    console.log (email, password);
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    const E_mail = document.getElementById("E-mail").value;
+    const P_assword = document.getElementById("P-assword").value;
+    firebase.auth().createUserWithEmailAndPassword(E_mail, P_assword)
   .then((result) => {
     // Signed in 
     const user = result.user;
@@ -34,23 +33,27 @@ const signUp=()=> {
   });
 };
 // logging user back in 
-var email = document.getElementById("email").value;
-var password = document.getElementById("password").value;
-const login = () => {
-firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((userCredential) => {
-   window.location.href = "index.html";
-   alert ("you are loged in successfully")
-    var user = userCredential.user;
-    // ...
-  })
-  .catch((error) => {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    console.error("Error signing in:", errorCode, errorMessage);
-    alert("email or password is incorrect")
-  });
-}
+
+const login = (event) => {
+  event.preventDefault(); // Prevent form submission
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value.trim();
+
+  firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+    .then(() => {
+      return firebase.auth().signInWithEmailAndPassword(email, password);
+    })
+    .then((userCredential) => {
+      console.log("Login successful:", userCredential.user);
+      window.location.href = "index.html";
+      alert("You are logged in successfully");
+    })
+    .catch((error) => {
+      console.error("Error setting persistence:", error);
+      alert("Error: " + error.message);
+    });
+};
+
 //logging user out 
 const logout = () => {
   firebase.auth().signOut()
@@ -63,3 +66,13 @@ const logout = () => {
     alert("email or password is incorrect")
   });
 }
+// function to check if the user is logedout or not 
+// firebase.auth().onAuthStateChanged((user) => {
+//   if (user) {
+//     // User is logged in
+//     console.log("User is logged in:", user);
+//   } else {
+//     // User is logged out
+//     console.log("User is logged out.");
+//   }
+// });
