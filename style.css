@@ -914,3 +914,31 @@ p.index.html{
 .signUpPage{
     font-family: "Montserrat", sans-serif;
 }
+
+#userName{
+   
+    color: #191919;
+    font-size: 14px;
+    margin-right: 20px;
+    margin-top: 5px;
+    font-family: "Montserrat", sans-serif;
+}
+
+/*styling for pasword visibility toggler */
+.password-container {
+    position: relative;
+  }
+  
+  #P-assword {
+    padding-right: 40px; /* Add space for the eye icon */
+  }
+  
+  .password-container span {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10; /* Ensure the icon is above other elements */
+    color: #6c757d; /* Optional: Adjust the color */
+  }

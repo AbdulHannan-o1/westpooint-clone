@@ -12,14 +12,25 @@ const auth = firebaseApp.auth();
 const signUp=()=> {
     const E_mail = document.getElementById("E-mail").value;
     const P_assword = document.getElementById("P-assword").value;
+    const firstname = document.getElementById("firstname").value;
+    const lastname = document.getElementById("lastname").value;
+    const username = firstname + " " + lastname;
+
     firebase.auth().createUserWithEmailAndPassword(E_mail, P_assword)
   .then((result) => {
-    // Signed in 
-    const user = result.user;
-    console.log("User signed up successfully:", user);
+      // Signed in 
+      const user = result.user;
 
-    // Redirect to index.html
-    window.location.href = "index.html";
+      //set the display name
+      return user.updateProfile({
+        displayName: username,
+      }).then(() => {
+
+      console.log("user signed in with display name :", user.displayName);
+
+      // Redirect to index.html
+      window.location.href = "index.html";
+    })
   })
   .catch((error) => {
      // Handle errors
@@ -66,13 +77,23 @@ const logout = () => {
     alert("email or password is incorrect")
   });
 }
-// function to check if the user is logedout or not 
-// firebase.auth().onAuthStateChanged((user) => {
-//   if (user) {
-//     // User is logged in
-//     console.log("User is logged in:", user);
-//   } else {
-//     // User is logged out
-//     console.log("User is logged out.");
-//   }
-// });
+
+// function to show current user's name
+firebase.auth().onAuthStateChanged((user) => {
+  const userName = document.getElementById("userName");
+  if (user) {
+    // User is signed in
+    console.log("User is signed in:", user);
+    userName.innerHTML = user.displayName || user.email || "No username available";
+  } else {
+    // No user is signed in
+    console.log("No user is signed in.");
+    userName.innerHTML = "Not logged in";
+  }
+});
+
+
+// connecting to the database 
+var defaultdatabase = firebase.database();  
+firebase.database.enableLogging(false );
+console.log(defaultdatabase); // Check if the database is connected 

@@ -193,3 +193,16 @@ function showPlaceholder(element) {
         return new bootstrap.Popover(popoverTriggerEl)
     })
 });
+
+// function to toggle the password visibility
+const togglePassword = document.getElementById("eyeicon");
+const passwordField = document.getElementById("P-assword");
+
+togglePassword.addEventListener("click", () => {
+  // Toggle the type attribute
+  const type = passwordField.type === "password" ? "text" : "password";
+  passwordField.type = type;
+
+  // Change the image based on the visibility
+  togglePassword.src = type === "password" ? "images/eyeClose.png" : "images/eyeOpen.png";
+});
