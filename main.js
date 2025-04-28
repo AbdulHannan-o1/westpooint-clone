@@ -195,14 +195,73 @@ function showPlaceholder(element) {
 });
 
 // function to toggle the password visibility
-const togglePassword = document.getElementById("eyeicon");
-const passwordField = document.getElementById("P-assword");
+// const eyebtn = document.getElementById("eyeicon");
+// const password = document.getElementById("P-assword");
 
-togglePassword.addEventListener("click", () => {
-  // Toggle the type attribute
-  const type = passwordField.type === "password" ? "text" : "password";
-  passwordField.type = type;
+// eyebtn.addEventListener("click", () => {
+//     console.log("eye icon clicked");
+//     if (password.type === "password") {
+//         password.type = "text";
+//         eyebtn.classList.remove("fa-eye-slash");
+//         eyebtn.classList.add("fa-eye");
+//     } else {
+//         password.type = "password";
+//         eyebtn.classList.remove("fa-eye");
+//         eyebtn.classList.add("fa-eye-slash");
+//     }
+// });
+// const eyeIcon = document.getElementById("eyeicon");
+// function error (){ 
+//     document.addEventListener("click", () => {
+//     console.log("eye icon clicked");
+// })}
+// function togglePasswordVisibility() {
+//     const eyeIcon = document.getElementById("eyeicon");
+//     const passwordField = document.getElementById("P-assword");
 
-  // Change the image based on the visibility
-  togglePassword.src = type === "password" ? "images/eyeClose.png" : "images/eyeOpen.png";
-});
+//     // Debugging: Check if elements are found
+//     console.log("Eye Icon Element:", eyeIcon);
+//     console.log("Password Field Element:", passwordField);
+
+//     if (eyeIcon && passwordField) {
+//         eyeIcon.addEventListener("click", () => {
+//             console.log("Eye icon clicked!"); // Debugging
+
+//             // Toggle the type attribute
+//             const type = passwordField.type === "password" ? "text" : "password";
+//             passwordField.type = type;
+
+//             // Toggle the icon class
+//             const icon = eyeIcon.querySelector("i");
+//             icon.classList.toggle("bi-eye");
+//             icon.classList.toggle("bi-eye-slash");
+//         });
+//     } else {
+//         console.error("One or more elements not found!");
+//     }
+// }
+
+
+function togglePasswordVisibility(passwordFieldId, eyeIconId) {
+    const passwordField = document.getElementById(passwordFieldId);
+    const eyeIcon = document.getElementById(eyeIconId);
+
+    // Debugging: Check if elements are found
+    // console.log("Password Field Element:", passwordField);
+    // console.log("Eye Icon Element:", eyeIcon);
+
+    if (passwordField && eyeIcon) {
+        // console.log("Eye icon clicked!"); // Debugging
+
+        // Toggle the type attribute
+        const type = passwordField.type === "password" ? "text" : "password";
+        passwordField.type = type;
+
+        // Toggle the icon class
+        const icon = eyeIcon.querySelector("i");
+        icon.classList.toggle("bi-eye");
+        icon.classList.toggle("bi-eye-slash");
+    } else {
+        console.error("One or more elements not found!");
+    }
+}

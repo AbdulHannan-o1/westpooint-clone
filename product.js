@@ -32,11 +32,11 @@ function syncInputs() {
   }
   
    //Initialize the slider and inputs
-   document.getElementById('min-price').value = minInit;
-   document.getElementById('max-price').value = maxInit;
-  document.getElementById('min-slider').value = minInit;
-   document.getElementById('max-slider').value = maxInit;
-  updateSlider();
+  //  document.getElementById('min-price').value = minInit;
+  //  document.getElementById('max-price').value = maxInit;
+  // document.getElementById('min-slider').value = minInit;
+  //  document.getElementById('max-slider').value = maxInit;
+  // updateSlider();
 //   js for dynamic cards 
 const products = [
     // from 1 to 12 health and beauty products
@@ -641,3 +641,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 console.log(document.body.innerHTML);
+
+const bestContainer = document.getElementById('bestSellingProducts');
+console.log("Best Selling Products Container:", bestContainer);
