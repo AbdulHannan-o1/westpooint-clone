@@ -1,12 +1,14 @@
+
 const firebaseApp = firebase.initializeApp({ 
-    apiKey: "AIzaSyDTyqah2o2fRNHBszGx7V68GZtVxQbDNnI",
-    authDomain: "westpoint-3bfd8.firebaseapp.com",
-    projectId: "westpoint-3bfd8",
-    storageBucket: "westpoint-3bfd8.firebasestorage.app",
-    messagingSenderId: "901126208240",
-    appId: "1:901126208240:web:6f4fccf83ea64c9323a035",
-    measurementId: "G-62MQMNF3K1" });
-const db = firebaseApp.firestore();
+  apiKey: "AIzaSyDTyqah2o2fRNHBszGx7V68GZtVxQbDNnI",
+  authDomain: "westpoint-3bfd8.firebaseapp.com",
+  databaseURL: "https://westpoint-3bfd8-default-rtdb.asia-southeast1.firebasedatabase.app/", 
+  projectId: "westpoint-3bfd8",
+  storageBucket: "westpoint-3bfd8.firebasestorage.app",
+  messagingSenderId: "901126208240",
+  appId: "1:901126208240:web:6f4fccf83ea64c9323a035",
+  measurementId: "G-62MQMNF3K1"
+ });
 const auth = firebaseApp.auth();
 // Example: Sign-up function
 const signUp=()=> {
@@ -94,6 +96,14 @@ firebase.auth().onAuthStateChanged((user) => {
 
 
 // connecting to the database 
-var defaultdatabase = firebase.database();  
-firebase.database.enableLogging(false );
-console.log(defaultdatabase); // Check if the database is connected 
+// var defaultdatabase = firebase.database();  
+// firebase.database.enableLogging(false );
+// console.log(defaultdatabase); // Check if the database is connected 
+
+// connection to the database
+// Get a reference to the database service
+// With this:
+const database = firebase.database();
+database.ref(".info/connected").on("value", (snap) => {
+  console.log(snap.val() ? "🟢 Realtime DB connected" : "🔴 DB disconnected");
+});
