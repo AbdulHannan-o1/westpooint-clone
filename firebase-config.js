@@ -10,40 +10,63 @@ const firebaseApp = firebase.initializeApp({
   measurementId: "G-62MQMNF3K1"
  });
 const auth = firebaseApp.auth();
+
+// connecting to the database
+const database = firebase.database();
+database.ref(".info/connected").on("value", (snap) => {
+  console.log(snap.val() ? "Realtime DB connected" : "DB disconnected");
+});
+
+
+// function to write user data to the database
+function writeUserData(userId, name, email, imageUrl = "") {
+  firebase.database().ref('users/' + userId).set({
+    username: name,
+    email: email,
+    profile_picture: imageUrl
+  }).then(() => {
+    console.log("Data saved successfully!");
+  }).catch((error) => {
+    console.error("Error saving data:", error);
+  });
+}
+
 // Example: Sign-up function
-const signUp=()=> {
-    const E_mail = document.getElementById("E-mail").value;
-    const P_assword = document.getElementById("P-assword").value;
+const signUp = () => {
+    const email = document.getElementById("E-mail").value;
+    const password = document.getElementById("P-assword").value;
     const firstname = document.getElementById("firstname").value;
     const lastname = document.getElementById("lastname").value;
     const username = firstname + " " + lastname;
 
-    firebase.auth().createUserWithEmailAndPassword(E_mail, P_assword)
-  .then((result) => {
-      // Signed in 
-      const user = result.user;
+    // Validate inputs
+    if (!email || !password || !firstname || !lastname) {
+        alert("Please fill all fields!");
+        return;
+    }
 
-      //set the display name
-      return user.updateProfile({
-        displayName: username,
-      }).then(() => {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((result) => {
+        // Signed in 
+        const user = result.user;
+        alert("you are signed up successfully");
 
-      console.log("user signed in with display name :", user.displayName);
-
-      // Redirect to index.html
-      window.location.href = "index.html";
+        // Set the display name
+        return user.updateProfile({
+            displayName: username,
+        }).then(() => {
+            // Save user data to the database
+            writeUserData(user.uid, username, email); 
+            
+            // Redirect to index.html
+            window.location.href = "index.html";
+        });
     })
-  })
-  .catch((error) => {
-     // Handle errors
-    const errorCode = error.code;
-    const errorMessage = error.message;
-
-     console.error("Error signing up:", errorCode, errorMessage);
-
-     // Display error message to the user
-     alert(`Error: ${errorMessage}`);
-  });
+    .catch((error) => {
+        // Handle errors
+        console.error("Error signing up:", error.code, error.message);
+        alert(`Error: ${error.message}`);
+    });
 };
 // logging user back in 
 
@@ -92,18 +115,4 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log("No user is signed in.");
     userName.innerHTML = "Not logged in";
   }
-});
-
-
-// connecting to the database 
-// var defaultdatabase = firebase.database();  
-// firebase.database.enableLogging(false );
-// console.log(defaultdatabase); // Check if the database is connected 
-
-// connection to the database
-// Get a reference to the database service
-// With this:
-const database = firebase.database();
-database.ref(".info/connected").on("value", (snap) => {
-  console.log(snap.val() ? "🟢 Realtime DB connected" : "🔴 DB disconnected");
 });

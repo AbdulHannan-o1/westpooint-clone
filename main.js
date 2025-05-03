@@ -1,3 +1,32 @@
+// js for alert message
+// Replace all native alerts
+window.originalAlert = window.alert;
+window.alert = (message, duration = 3000) => {
+    const container = document.getElementById('alert-container') || createAlertContainer();
+    const alert = document.createElement('div');
+    alert.className = 'custom-alert';
+    alert.textContent = message;
+    container.appendChild(alert);
+    
+    // Auto-dismiss
+    setTimeout(() => {
+        alert.classList.add('fade-out');
+        setTimeout(() => alert.remove(), 3000); // Match transition duration
+    }, duration);
+};
+
+function createAlertContainer() {
+    const container = document.createElement('div');
+    container.id = 'alert-container';
+    container.style.position = 'fixed';
+    container.style.top = '20px';
+    container.style.right = '20px';
+    container.style.zIndex = '1000';
+    document.body.appendChild(container);
+    return container;
+}
+
+
 function loadComponents(components) {
     return Promise.all(components.map(({ selector, file }) => {
         const element = document.querySelector(selector);
@@ -194,54 +223,7 @@ function showPlaceholder(element) {
     })
 });
 
-// function to toggle the password visibility
-// const eyebtn = document.getElementById("eyeicon");
-// const password = document.getElementById("P-assword");
-
-// eyebtn.addEventListener("click", () => {
-//     console.log("eye icon clicked");
-//     if (password.type === "password") {
-//         password.type = "text";
-//         eyebtn.classList.remove("fa-eye-slash");
-//         eyebtn.classList.add("fa-eye");
-//     } else {
-//         password.type = "password";
-//         eyebtn.classList.remove("fa-eye");
-//         eyebtn.classList.add("fa-eye-slash");
-//     }
-// });
-// const eyeIcon = document.getElementById("eyeicon");
-// function error (){ 
-//     document.addEventListener("click", () => {
-//     console.log("eye icon clicked");
-// })}
-// function togglePasswordVisibility() {
-//     const eyeIcon = document.getElementById("eyeicon");
-//     const passwordField = document.getElementById("P-assword");
-
-//     // Debugging: Check if elements are found
-//     console.log("Eye Icon Element:", eyeIcon);
-//     console.log("Password Field Element:", passwordField);
-
-//     if (eyeIcon && passwordField) {
-//         eyeIcon.addEventListener("click", () => {
-//             console.log("Eye icon clicked!"); // Debugging
-
-//             // Toggle the type attribute
-//             const type = passwordField.type === "password" ? "text" : "password";
-//             passwordField.type = type;
-
-//             // Toggle the icon class
-//             const icon = eyeIcon.querySelector("i");
-//             icon.classList.toggle("bi-eye");
-//             icon.classList.toggle("bi-eye-slash");
-//         });
-//     } else {
-//         console.error("One or more elements not found!");
-//     }
-// }
-
-
+// js for password visibility toggle
 function togglePasswordVisibility(passwordFieldId, eyeIconId) {
     const passwordField = document.getElementById(passwordFieldId);
     const eyeIcon = document.getElementById(eyeIconId);
@@ -265,3 +247,4 @@ function togglePasswordVisibility(passwordFieldId, eyeIconId) {
         console.error("One or more elements not found!");
     }
 }
+
