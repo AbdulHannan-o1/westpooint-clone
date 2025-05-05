@@ -965,3 +965,144 @@ p.index.html{
 .alert-success { background: #4CAF50; }
 .alert-warning { background: #FF9800; }
 .alert-info { background: #2196F3; }
+/* css for shopping cart.html */
+#cartSection {
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+.cart-container {
+    background-color: white;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.cart-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid beige;
+}
+.item-info {
+    flex: 2;
+    display: flex;
+    align-items: center;
+}
+.item-image {
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 10px;
+}
+.item-details {
+    flex: 1;
+}
+.item-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.item-model {
+    color: #666;
+    font-size: 14px;
+}
+.item-price {
+    flex: 1;
+    text-align: right;
+    padding-right: 20px;
+}
+.item-quantity {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quantity-btn {
+    width: 25px;
+    height: 25px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.quantity-input {
+    width: 30px;
+    text-align: center;
+    margin: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding: 3px;
+}
+.item-total {
+    flex: 1;
+    text-align: right;
+    font-weight: bold;
+}
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+.summary-label {
+    font-weight: bold;
+}
+.grand-total {
+    font-size: 18px;
+    font-weight: bold;
+}
+.cart-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+.btn {
+    padding: 12px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+.btn-checkout {
+    background-color: #a61c20;
+    color: white;
+    font-weight: bold;
+    border: none;
+    font-weight: 400;
+    border-radius: 5px;
+    height: 40px;
+    width: 300px;
+    /* margin-left: 500px; */
+    margin-top: 50px;
+}
+.shop-link {
+text-decoration: none;
+color: #a61c20; /* Your red color */
+display: inline-flex;
+align-items: center;
+padding: 0.5rem 0;
+transition: color 0.2s;
+}
+
+.shop-link:hover {
+color: black; /* Hover color for both */
+}
+
+/* Icon spacing (applies to both icons) */
+.shop-link i {
+margin-right: 5px;
+}
