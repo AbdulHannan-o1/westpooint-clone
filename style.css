@@ -1106,3 +1106,7 @@ color: black; /* Hover color for both */
 .shop-link i {
 margin-right: 5px;
 }
+#cartItemRemBtn{
+    font-size: 20px;
+    margin: 2px 5px 2px 5px;
+}

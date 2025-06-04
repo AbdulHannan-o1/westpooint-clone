@@ -554,6 +554,7 @@ function initializeProducts() {
     });
     dealsContainer.innerHTML = dealsCards;
   }
+  attachAddToCartListeners();
 }
 
 // Helper function to generate product card HTML
@@ -561,29 +562,25 @@ function generateProductCard(product) {
     if (window.innerWidth <= 545) {
       console.log("Small screen (mobile or tablet)");
       return `
-          <div class="col-6 col-sm-4 col-md-3">
-    <div class="card h-100">
-        <span class="sale-badge">Sale 10%</span>
-        <img src="images/${product.image}" class="card-img-top" alt="...">
-        <div class="card-content cardContentForMobile">
+      <div class="col-6 col-sm-4 col-md-3 shop-item">
+        <div class="card h-100">
+          <span class="sale-badge">Sale 10%</span>
+          <img src="images/${product.image}" class="card-img-top" alt="...">
+          <div class="card-content cardContentForMobile">
             <div class="card-body">
                 <h5 class="card-title">${product.title}</h5>
                 <p class="card-text card-text02">${product.description}</p>
-                <p class="card-text ">Rs. ${product.price}</p>
+                <p class="card-text productPrice">Rs. ${product.price}</p>
             </div>
-            <div class="buttonDiv">
-                <div class="addToCartButton mx-auto">
-                    <i class="bi bi-cart addToCartIcon"></i> ADD TO CART
-                </div>
-            </div>
+            <button class="addToCartButton buttonDiv mx-auto"><i class="bi bi-cart addToCartIcon"></i>ADD TO CART</button>
+          </div>
         </div>
-    </div>
-</div>
+      </div>
 `;
     } else if (window.innerWidth > 575 && window.innerWidth <= 1024) {
       console.log("Medium screen (tablet or small desktop)");
       return `
-        <div class="col">
+        <div class="col shop-item">
             <div class="card">
                 <span class="sale-badge">Sale 10%</span>
                 <img src="images/${product.image}" class="card-img-top cardImgTop img-fluid" alt="${product.description}">
@@ -591,11 +588,9 @@ function generateProductCard(product) {
                     <div class="card-body">
                         <h5 class="card-title">${product.title}</h5>
                         <p class="card-text card-text02">${product.description}</p>
-                        <p class="card-text">${product.price}</p>
+                        <p class="card-text productPrice">${product.price}</p>
                     </div>
-                    <div class="buttonDiv">
-                        <div class="addToCartButton mx-auto"><i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
-                    </div>
+                    <button class="addToCartButton buttonDiv mx-auto"><i class="bi bi-cart addToCartIcon"></i>ADD TO CART</button>
                 </div>
             </div>
         </div>
@@ -603,7 +598,7 @@ function generateProductCard(product) {
     } else {
       console.log("Large screen (desktop)");
           return `
-        <div class="col">
+        <div class="col shop-item">
             <div class="card">
                 <span class="sale-badge">Sale 10%</span>
                 <img src="images/${product.image}" class="card-img-top cardImgTop img-fluid" alt="${product.description}">
@@ -611,11 +606,10 @@ function generateProductCard(product) {
                     <div class="card-body">
                         <h5 class="card-title">${product.title}</h5>
                         <p class="card-text card-text02">${product.description}</p>
-                        <p class="card-text">${product.price}</p>
+                        <p class="card-text productPrice">${product.price}</p>
                     </div>
-                    <div class="buttonDiv">
-                        <div class="addToCartButton mx-auto"><i class="bi bi-cart addToCartIcon"></i>ADD TO CART</div>
-                    </div>
+                
+                    <button class="addToCartButton buttonDiv mx-auto"><i class="bi bi-cart addToCartIcon"></i>ADD TO CART</button>
                 </div>
             </div>
         </div>
@@ -624,6 +618,8 @@ function generateProductCard(product) {
 
 
 }
+
+
 
 // Add resize event listener with shorter debounce time
 let resizeTimeout;
