@@ -149,3 +149,21 @@ function clearCart() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    checkoutBtn = document.querySelector('.btn-checkout');
+    if (checkoutBtn) {
+        checkoutBtn.addEventListener('click', () => {
+            const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+            if (cartItems.length === 0) {
+                alert('Your cart is empty! Please add items before checking out.');
+                return;
+            }
+            // Proceed with checkout logic here
+            alert('Proceeding to checkout...');
+            window.location.href = "checkout.html";
+        });
+    } else {
+        console.warn('Checkout button not found!');
+    }
+
+})

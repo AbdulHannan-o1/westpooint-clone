@@ -1110,3 +1110,69 @@ margin-right: 5px;
     font-size: 20px;
     margin: 2px 5px 2px 5px;
 }
+/* ====== Mobile Responsive Fixes ====== */
+@media (max-width: 767px) {
+    /* Adjust cart items for mobile */
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .item-info {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .item-image {
+        width: 50px;
+        height: 50px;
+        margin-right: 10px;
+    }
+
+    .item-price,
+    .item-quantity,
+    .item-total {
+        width: 100%;
+        text-align: left;
+        padding: 0;
+    }
+
+    .item-quantity {
+        justify-content: flex-start;
+    }
+
+    /* Adjust summary row for mobile */
+    .summary-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    /* Make checkout button full-width on mobile */
+    .btn-checkout {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Fix text overflow */
+    .item-name, .item-price, .item-total {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+/* ====== Tablet & Desktop (Keep Existing Styles) ====== */
+@media (min-width: 768px) {
+    /* Your existing styles work here */
+    .cart-item {
+        flex-direction: row;
+        align-items: center;
+    }
+    .item-price, .item-total {
+        text-align: right;
+    }
+}
