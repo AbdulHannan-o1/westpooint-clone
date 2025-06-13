@@ -1,5 +1,5 @@
 
-const firebaseApp = firebase.initializeApp({ 
+window.firebaseApp = firebase.initializeApp({ 
   apiKey: "AIzaSyDTyqah2o2fRNHBszGx7V68GZtVxQbDNnI",
   authDomain: "westpoint-3bfd8.firebaseapp.com",
   databaseURL: "https://westpoint-3bfd8-default-rtdb.asia-southeast1.firebasedatabase.app/", 
@@ -9,11 +9,11 @@ const firebaseApp = firebase.initializeApp({
   appId: "1:901126208240:web:6f4fccf83ea64c9323a035",
   measurementId: "G-62MQMNF3K1"
  });
-const auth = firebaseApp.auth();
+window.auth = firebaseApp.auth();
 
 // connecting to the database
-const database = firebase.database();
-database.ref(".info/connected").on("value", (snap) => {
+window.database = firebase.database();
+window.database.ref(".info/connected").on("value", (snap) => {
   console.log(snap.val() ? "Realtime DB connected" : "DB disconnected");
 });
 
@@ -115,4 +115,14 @@ firebase.auth().onAuthStateChanged((user) => {
     console.log("No user is signed in.");
     userName.innerHTML = "Not logged in";
   }
+});
+
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        console.log("User is signed in:", user);
+        // ✅ Sync cart only after auth is ready
+        window.syncCartWithFirebase?.();
+    } else {
+        console.log("No user is signed in.");
+    }
 });

@@ -1,5 +1,5 @@
 // cart-page.js
-
+console.log('Cart page script loaded');
 document.addEventListener('DOMContentLoaded', function () {
     if (document.getElementById('cartSection') && document.querySelector('.cart-total-price')) {
         console.log('DOM loaded - initializing cart');
@@ -35,6 +35,7 @@ function loadCart() {
         });
 
         updateTotal();
+        syncCartWithFirebase();
     } catch (e) {
         console.error('Error loading cart:', e);
     }
@@ -89,12 +90,14 @@ function changeQuantity(button, change) {
 
     updateTotal();
     saveCart();
+    syncCartWithFirebase();
 }
 
 function removeCartItem(button) {
     button.closest('.cart-item').remove();
     updateTotal();
     saveCart();
+    syncCartWithFirebase();
 }
 function updateTotal() {
     let total = 0;
@@ -139,6 +142,7 @@ function saveCart() {
     }));
 
     localStorage.setItem('cartItems', JSON.stringify(items));
+    syncCartWithFirebase();
 }
 
 function clearCart() {
@@ -146,6 +150,7 @@ function clearCart() {
         document.getElementById('cartSection').innerHTML = '';
         localStorage.removeItem('cartItems');
         updateTotal();
+        syncCartWithFirebase();
     }
 }
 
@@ -167,3 +172,56 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 })
+
+// sync cart with Firebase
+// This function would typically be called when the user is logged in
+window.syncCartWithFirebase = function () {
+    console.log("snc cart with fire base function called")
+    if (!window.auth) {
+        console.warn("Firebase auth is not initialized yet.");
+        return;
+    }
+
+    const user = window.auth.currentUser;
+    if (!user) {
+        console.warn('No user is currently logged in. Cart sync skipped.');
+        return;
+    }
+
+    const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
+    const userCartRef = window.database.ref(`carts/${user.uid}`);
+
+    if (cartItems.length === 0) {
+        // Remove from Firebase if cart is empty
+        userCartRef.remove()
+            .then(() => {
+                console.log('Cart is empty. Firebase cart data removed.');
+            })
+            .catch((error) => {
+                console.error('Error removing cart from Firebase:', error);
+            });
+        return;
+    }
+
+    userCartRef.set(cartItems)
+        .then(() => {
+            console.log('Cart synced with Firebase successfully.');
+        })
+        .catch((error) => {
+            console.error('Error syncing cart with Firebase:', error);
+        });
+}
+window.syncCartWithFirebaseSafe = function () {
+    if (!window.auth) {
+        console.warn("Firebase auth not ready");
+        return;
+    }
+
+    window.auth.onAuthStateChanged((user) => {
+        if (user) {
+            syncCartWithFirebase(); // your actual function
+        } else {
+            console.warn("No user — skipping cart sync.");
+        }
+    });
+};

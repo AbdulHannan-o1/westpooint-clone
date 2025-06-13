@@ -27,6 +27,9 @@ function addProductToCart(event) {
 
         cartItems.push({ title, price, image, quantity: 1 });
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
+       window.syncCartWithFirebaseSafe?.();
+
+
 
         alert(`"${title}" has been added to your cart!`);
     } catch (error) {
