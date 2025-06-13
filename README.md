@@ -62,7 +62,7 @@
 6. ✅ Checkout redirects if cart has items
 
 ---
-To see the live preview click the link below 
+To see the live preview click the link 
 https://abdulhannan-o1.github.io/westpooint-clone/
 
 ---
